@@ -1,0 +1,10 @@
+POST http://localhost:3002/api/blogs
+Content-Type: application/json
+Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1cmFqIiwiaWQiOiI2MjhjOGMxNmQ0YmQ4MzRlMWU2ZDEyZmUiLCJpYXQiOjE2NTMzODE0NTYsImV4cCI6MTY1MzM4NTA1Nn0.Ft73pHyx-RrOUR3d4Eta1ZA5lvjB1xZiq4u0czOHIx8
+
+{
+    "title" : "This is a new blog that i have created",
+    "author" : "Suraj Gaire",
+    "url" : "surajgaire/blog1",
+    "likes" : 10
+}

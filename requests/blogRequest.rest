@@ -1,0 +1,59 @@
+post http://localhost:3002/api/blogs
+content-type:application/json
+Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNzc3NzIiwiaWQiOiI2M2I0MWRmYjk3Mjk4MTg1MTk4ZTY4OGUiLCJpYXQiOjE2NzI3NDg5MjV9.bK9WN3N9aCBM_bySlghL4_8PGY6i5s96CVRCTyVpkrs
+
+{ "title": "blog created",
+  "author": "Suraj Gaire",
+  "url": "http://surajgaire.com",
+  "likes": "2"}
+
+###
+get http://localhost:3002/api/blogs
+###
+get http://localhost:3002/api/users
+
+###
+  post http://localhost:3002/api/blogs
+content-type:application/json
+
+{ 
+  "author": "Suraj Gaire",
+  "likes": "2500000"}
+###
+delete http://localhost:3002/api/blogs/628f3e661d72571b295ba480
+###
+delete http://localhost:3002/api/blogs/628f3e661d72571b295ba480
+Authorization:bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNzc3NzIiwiaWQiOiI2M2I0MWRmYjk3Mjk4MTg1MTk4ZTY4OGUiLCJpYXQiOjE2NzI3NDg5MjV9.bK9WN3N9aCBM_bySlghL4_8PGY6i5s96CVRCTyVpkrs
+###
+put http://localhost:3002/api/blogs/628f3e661d72571b295ba480
+content-type:application/json
+
+{  }
+###
+post http://localhost:3002/api/users
+content-type:application/json
+
+{
+    "username": "sssss",
+    "name": "suraj",
+    "password": "gaire"
+}
+###
+post http://localhost:3002/api/login
+content-type:application/json
+
+{
+    "username": "sssss",
+    "password": "gaire"
+}
+###
+
+  post http://localhost:3002/blog/api/blogs/628f3e661d72571b295ba480/comments
+content-type:application/json
+
+{ 
+ "comment":"Nice one."}
+
+###
+
+ get http://localhost:3002/api/blogs/628f3e661d72571b295ba480/comments

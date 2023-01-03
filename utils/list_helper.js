@@ -37,12 +37,48 @@ const favouriteBlog = (blogs) => {
   }, {});
   return mostliked;
 };
-
 const mostBlogs = (blogs) => {
-  const mostBlogsAuthor = blogs.reduce((previousValue, currentValue) => {}, {});
+  if (!blogs.length) return null;
+
+  const hashMap = {};
+
+  blogs.forEach((blog) => {
+    if (!hashMap[blog.author]) {
+      hashMap[blog.author] = 1;
+    } else {
+      hashMap[blog.author]++;
+    }
+  });
+
+  let authorWithMostBlogs = Object.keys(hashMap).reduce((a, b) =>
+    hashMap[a] > hashMap[b] ? a : b
+  );
+
+  return { author: authorWithMostBlogs, blogs: hashMap[authorWithMostBlogs] };
 };
+
+const mostLikes = (blogs) => {
+  if (!blogs.length) return null;
+  const hashMap = {};
+  blogs.forEach((blog) => {
+    if (!hashMap[blog.author]) {
+      hashMap[blog.author] = blog.likes;
+    } else {
+      hashMap[blog.author] += blog.likes;
+    }
+  });
+
+  let authorWithMostLikes = Object.keys(hashMap).reduce((a, b) =>
+    hashMap[a] > hashMap[b] ? a : b
+  );
+
+  return { author: authorWithMostLikes, likes: hashMap[authorWithMostLikes] };
+};
+
 module.exports = {
   dummy,
   totalLikes,
   favouriteBlog,
+  mostBlogs,
+  mostLikes,
 };
